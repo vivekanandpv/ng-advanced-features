@@ -1,4 +1,33 @@
 <div class="p-5">
   <h2>Angular Advanced Features</h2>
-  <hr>
+  <hr />
+
+  <!-- dynamic component using ngComponentOutlet directive -->
+
+  <!-- eager loading -->
+  <ng-container
+    *ngComponentOutlet="
+      eagerNavbar;
+      inputs: { message: 'Hello, world!', year: 2024 }
+    "
+  ></ng-container>
+
+  <hr />
+
+  <!-- lazy loading -->
+  <ng-container
+    *ngComponentOutlet="
+      lazyNavbar | async;
+      inputs: { message: 'Async Hello, world!', year: 2024 }
+    "
+  ></ng-container>
+
+  <!-- ngComponentOutlet with injector -->
+  <ng-container
+    *ngComponentOutlet="
+      itemCard;
+      injector: injectorForItemCard;
+      inputs: { message: 'Item: Hello, world!', year: 2024 }
+    "
+  ></ng-container>
 </div>
