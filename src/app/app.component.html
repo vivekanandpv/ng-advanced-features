@@ -1,4 +1,14 @@
 <div class="p-5">
   <h2>Angular Advanced Features</h2>
-  <hr>
+  <hr />
+  <button class="btn btn-primary my-4" (click)="toggle()">
+    Toggle Condition
+  </button>
+  <div class="alert alert-primary" role="alert" *ifClone="visible()">
+    A simple primary alert—check it out!
+  </div>
+
+  <ul>
+    <li *forClone="let c of cities; let i = $index">{{ c }} -> {{ i }}</li>
+  </ul>
 </div>
